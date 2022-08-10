@@ -17,20 +17,20 @@
 // 掛け算をループでやる
 
     @R2
-    M=0 // M[R2] = 0
+    M=0 // M[2] = 0
     @i
     M=1 // M[i] = 1
 (LOOP)
     @i
-    D=M // D = i
+    D=M // D = M[i]
     @R1
-    D=D-M // D = i - R1
+    D=D-M // D = M[i] - M[1]
     @END
-    D;JGT // if i - R2 > 0 then goto @END
+    D;JGT // if M[i] - M[1] > 0 then goto @END
     @R0
-    D=M // D = R0
+    D=M // D = M[0]
     @R2
-    M=D+M // D = R0 + M[R2]
+    M=D+M // M[2] = M[0] + M[2]
     @i
     M=M+1 // M[i]++
     @LOOP
